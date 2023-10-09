@@ -12,3 +12,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+// Отримуємо доступ до елементу ul.gallery
+const galleryList = document.querySelector(".gallery");
+
+// Створюємо розмітку для кожного зображення та об'єднуємо їх
+const imagesMarkup = images.map(image => `
+  <li>
+    <img src="${image.url}" alt="${image.alt}" height= 300px>
+  </li>
+`).join("");
+
+// Вставляємо отриманий HTML в ul.gallery
+galleryList.insertAdjacentHTML("beforeend", imagesMarkup);
